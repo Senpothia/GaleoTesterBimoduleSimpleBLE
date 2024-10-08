@@ -103,23 +103,17 @@ void main(void) {
     // Détermination mode de fonctionnement: master/slave
     // Affichage message d'accueil
 
-    __delay_ms(1000);
+
 
     I2C_Master_Init();
     if (GPIO1_GetValue() == 1) {
 
         testLeds = true;
 
-
     } else {
 
         testLeds = false;
-
-
-
     }
-
-
 
     if (GPIO2_GetValue() == 0) {
 
@@ -130,9 +124,8 @@ void main(void) {
         pap = false;
     }
 
-
-
-
+    __delay_ms(3000);   // Attente demarrage module arduino BLE
+    
     while (1) {
 
         //LCD_Init(0x4E);
@@ -160,6 +153,7 @@ void main(void) {
 
 
         startPhaseBLE(1);
+        waitForBleAcq();
         __delay_ms(100);
         programmation = false;
         startAlert();
@@ -182,7 +176,7 @@ void main(void) {
 
         pressBP1(true);
         pressBP2(true);
-        __delay_ms(500);   // !!!modifié
+        __delay_ms(500); // !!!modifié
         alimenter(true);
         __delay_ms(2000); // 2000 pour D925ED4; 10000 pour D850
 
@@ -201,7 +195,7 @@ void main(void) {
         }
 
 
-        __delay_ms(500);  //!!! modififié
+        __delay_ms(500); //!!! modififié
 
         pressBP1(false);
         pressBP2(false);
@@ -323,10 +317,10 @@ void main(void) {
 
             displayManagerMaster("ETAPE 6", "TEST R1 ON", LIGNE_VIDE, LIGNE_VIDE);
             pressBP1(true);
-            __delay_ms(500);  // !!!modifié
+            __delay_ms(500); // !!!modifié
             pressBP1(false);
 
-            __delay_ms(500);  // !!! modifié
+            __delay_ms(500); // !!! modifié
 
             if (testR1(true)) {
 
@@ -351,10 +345,10 @@ void main(void) {
 
             displayManagerMaster("ETAPE 7", "TEST R1 OFF - R2 ON", LIGNE_VIDE, LIGNE_VIDE);
             pressBP1(true);
-            __delay_ms(500);  // !!! modifié
+            __delay_ms(500); // !!! modifié
             pressBP1(false);
 
-            __delay_ms(500);  // !!! modifié
+            __delay_ms(500); // !!! modifié
 
             if (testR1(false) && testR2(true)) {
 
@@ -376,10 +370,10 @@ void main(void) {
 
             displayManagerMaster("ETAPE 8", "TEST R2 OFF - R3 ON", LIGNE_VIDE, LIGNE_VIDE);
             pressBP1(true);
-            __delay_ms(1000);  // !!! NON MODIFIABLE: synchronisation arduino pour scan BLE
+            __delay_ms(1000); // !!! NON MODIFIABLE: synchronisation arduino pour scan BLE
             pressBP1(false);
 
-            __delay_ms(1000);  // !!! NON MODIFIABLE: synchronisation arduino pour scan BLE
+            __delay_ms(1000); // !!! NON MODIFIABLE: synchronisation arduino pour scan BLE
 
             if (testR2(false) && testR3(true)) {
 
@@ -427,7 +421,7 @@ void main(void) {
 
             }
 
-            __delay_ms(1000);  // !!! modifié
+            __delay_ms(1000); // !!! modifié
 
         }
 
@@ -464,7 +458,7 @@ void main(void) {
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 
             }
-            __delay_ms(1000);  // !!! modifié
+            __delay_ms(1000); // !!! modifié
 
         }
 
@@ -482,7 +476,7 @@ void main(void) {
             __delay_ms(250);
             pressBP1(false);
 
-            __delay_ms(3000);  // !!! NON MODIFIABLE: synchronisation carte D925ED4
+            __delay_ms(3000); // !!! NON MODIFIABLE: synchronisation carte D925ED4
 
             pressBP1(true);
             __delay_ms(250);
@@ -503,7 +497,7 @@ void main(void) {
 
             }
 
-            __delay_ms(500);  // !!! modifié
+            __delay_ms(500); // !!! modifié
 
             pressBP1(false);
             pressBP2(false);
@@ -672,7 +666,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                __delay_ms(1000);   // !!! modifié
+                __delay_ms(1000); // !!! modifié
             } else {
 
                 printf("-> TEST:18:1");
@@ -691,7 +685,7 @@ void main(void) {
             attenteAquittement(&automatique, &testActif);
             initialConditions(&testActif, &testVoyants, &automatique, &programmation);
 
-            __delay_ms(1000);  //!!! modifié
+            __delay_ms(1000); //!!! modifié
 
         }
 

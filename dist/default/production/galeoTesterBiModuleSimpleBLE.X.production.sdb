@@ -67,7 +67,7 @@ I2C_DATA_NACK 3
 I2C_TIMEOUT 4
 I2C_NULL 5
 ]
-"413 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\main.c
+"407 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\main.c
 [e E3374 . `uc
 AN3 8
 AN2 10
@@ -415,7 +415,7 @@ channel_FVR 31
 "509
 [u S1978 . 1 `S1969 1 . 1 0 ]
 [v _PORTBbits PORTBbits `VES1978  1 e 1 @13 ]
-[s S1371 . 1 `uc 1 RC0 1 0 :1:0 
+[s S1369 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -425,8 +425,8 @@ channel_FVR 31
 `uc 1 RC7 1 0 :1:7 
 ]
 "571
-[u S1380 . 1 `S1371 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES1380  1 e 1 @14 ]
+[u S1378 . 1 `S1369 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES1378  1 e 1 @14 ]
 [s S1864 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
@@ -805,9 +805,9 @@ channel_FVR 31
 "68 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"451
+"445
 [v main@buffer_1724 buffer `i  1 a 2 23 ]
-"414
+"408
 [v main@buffer buffer `i  1 a 2 21 ]
 "101
 [v main@bleCode bleCode `[21]uc  1 a 21 0 ]
@@ -831,7 +831,7 @@ channel_FVR 31
 [v main@slaveInTest slaveInTest `a  1 a 1 26 ]
 "96
 [v main@master master `a  1 a 1 25 ]
-"702
+"696
 } 0
 "1342 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\tester.c
 [v _waitForBleAcq waitForBleAcq `(v  1 e 1 0 ]

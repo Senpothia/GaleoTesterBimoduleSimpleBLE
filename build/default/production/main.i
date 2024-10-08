@@ -5896,23 +5896,17 @@ void main(void) {
 
 
 
-    _delay((unsigned long)((1000)*(16000000/4000.0)));
+
 
     I2C_Master_Init();
     if (PORTCbits.RC0 == 1) {
 
         testLeds = 1;
 
-
     } else {
 
         testLeds = 0;
-
-
-
     }
-
-
 
     if (PORTCbits.RC1 == 0) {
 
@@ -5923,8 +5917,7 @@ void main(void) {
         pap = 0;
     }
 
-
-
+    _delay((unsigned long)((3000)*(16000000/4000.0)));
 
     while (1) {
 
@@ -5932,7 +5925,7 @@ void main(void) {
 
         displayManagerMaster("TEST CARTE D925ED4", "MODULE MAITRE", "POSITIONNER CARTE", "APPUYER SUR OK");
         _delay((unsigned long)((100)*(16000000/4000.0)));
-# 150 "main.c"
+# 143 "main.c"
         do { LATAbits.LATA7 = 0; } while(0);
         do { LATBbits.LATB5 = 0; } while(0);
 
@@ -5946,6 +5939,7 @@ void main(void) {
 
 
         startPhaseBLE(1);
+        waitForBleAcq();
         _delay((unsigned long)((100)*(16000000/4000.0)));
         programmation = 0;
         startAlert();
