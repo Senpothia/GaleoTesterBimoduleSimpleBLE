@@ -5898,9 +5898,7 @@ void main(void) {
 
     _delay((unsigned long)((1000)*(16000000/4000.0)));
 
-
-
-
+    I2C_Master_Init();
     if (PORTCbits.RC0 == 1) {
 
         testLeds = 1;
@@ -5934,7 +5932,7 @@ void main(void) {
 
         displayManagerMaster("TEST CARTE D925ED4", "MODULE MAITRE", "POSITIONNER CARTE", "APPUYER SUR OK");
         _delay((unsigned long)((100)*(16000000/4000.0)));
-# 152 "main.c"
+# 150 "main.c"
         do { LATAbits.LATA7 = 0; } while(0);
         do { LATBbits.LATB5 = 0; } while(0);
 

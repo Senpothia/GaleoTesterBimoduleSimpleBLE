@@ -105,9 +105,7 @@ void main(void) {
 
     __delay_ms(1000);
 
-   
-
-
+    I2C_Master_Init();
     if (GPIO1_GetValue() == 1) {
 
         testLeds = true;
@@ -137,13 +135,13 @@ void main(void) {
 
     while (1) {
 
-        // LCD_Init(0x4E);
+        //LCD_Init(0x4E);
         // displayManager(TITRE, MODE_MASTER, BOARD_REQUEST, OK_REQUEST);
         displayManagerMaster(TITRE, MODE_MASTER, BOARD_REQUEST, OK_REQUEST);
         __delay_ms(100);
-        
-        
-     
+
+
+
 
         // sélection test individuel des leds
         // le test est inhibé si l'entrée GPIO1 est à zéro
@@ -175,7 +173,7 @@ void main(void) {
 
         __delay_ms(100);
 
-      
+
         //LCD_Init(0x4E);
         displayManagerMaster("ETAPE 1", "TEST 3 RELAIS ON", LIGNE_VIDE, LIGNE_VIDE);
 
@@ -202,7 +200,7 @@ void main(void) {
 
         }
 
-      
+
         __delay_ms(1000);
 
         pressBP1(false);
@@ -229,7 +227,7 @@ void main(void) {
             }
         }
 
-     
+
 
         // ETAPE 3
 
@@ -288,7 +286,7 @@ void main(void) {
 
         }
 
-   
+
 
         // ETAPE 5
 
@@ -343,7 +341,7 @@ void main(void) {
             }
 
         }
-     
+
 
         // ETAPE 7
 
@@ -370,7 +368,7 @@ void main(void) {
             }
 
         }
-     
+
         // ETAPE 8
 
 
@@ -396,7 +394,7 @@ void main(void) {
 
         }
 
-     
+
 
         // ETAPE 9
 
@@ -432,7 +430,7 @@ void main(void) {
             __delay_ms(2000);
 
         }
-    
+
 
         // ETAPE 10
 
@@ -470,7 +468,7 @@ void main(void) {
 
         }
 
-     
+
 
         // ETAPE 12
 
@@ -511,7 +509,7 @@ void main(void) {
             pressBP2(false);
 
         }
-      
+
 
         // ETAPE 13:TEST DES 3 LEDS ALLUMEES SIMULTANEMENT
 
@@ -537,7 +535,7 @@ void main(void) {
                 printf("-> TEST:13:1");
             }
         }
- 
+
         // ETAPE 14
 
 
@@ -562,7 +560,7 @@ void main(void) {
             }
 
         }
-     
+
         // ETAPE 15
 
 
@@ -588,7 +586,7 @@ void main(void) {
             }
 
         }
-      
+
 
         // ETAPE 16
 
@@ -612,7 +610,7 @@ void main(void) {
             }
 
         }
-       
+
 
         // ETAPE 17
 
@@ -640,7 +638,7 @@ void main(void) {
 
         }
 
-     
+
 
         // ETAPE 18
 
@@ -681,7 +679,7 @@ void main(void) {
             }
         }
 
-      
+
         // ETAPE: SORTIE
 
         if (testActif) {
