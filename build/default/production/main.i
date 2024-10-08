@@ -5968,7 +5968,7 @@ void main(void) {
 
         pressBP1(1);
         pressBP2(1);
-        _delay((unsigned long)((1000)*(16000000/4000.0)));
+        _delay((unsigned long)((500)*(16000000/4000.0)));
         alimenter(1);
         _delay((unsigned long)((2000)*(16000000/4000.0)));
 
@@ -5987,7 +5987,7 @@ void main(void) {
         }
 
 
-        _delay((unsigned long)((1000)*(16000000/4000.0)));
+        _delay((unsigned long)((500)*(16000000/4000.0)));
 
         pressBP1(0);
         pressBP2(0);
@@ -6109,10 +6109,10 @@ void main(void) {
 
             displayManagerMaster("ETAPE 6", "TEST R1 ON", "", "");
             pressBP1(1);
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
+            _delay((unsigned long)((500)*(16000000/4000.0)));
             pressBP1(0);
 
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
+            _delay((unsigned long)((500)*(16000000/4000.0)));
 
             if (testR1(1)) {
 
@@ -6137,10 +6137,10 @@ void main(void) {
 
             displayManagerMaster("ETAPE 7", "TEST R1 OFF - R2 ON", "", "");
             pressBP1(1);
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
+            _delay((unsigned long)((500)*(16000000/4000.0)));
             pressBP1(0);
 
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
+            _delay((unsigned long)((500)*(16000000/4000.0)));
 
             if (testR1(0) && testR2(1)) {
 
@@ -6213,7 +6213,7 @@ void main(void) {
 
             }
 
-            _delay((unsigned long)((2000)*(16000000/4000.0)));
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
 
         }
 
@@ -6250,7 +6250,7 @@ void main(void) {
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 
             }
-            _delay((unsigned long)((2000)*(16000000/4000.0)));
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
 
         }
 
@@ -6289,7 +6289,7 @@ void main(void) {
 
             }
 
-            _delay((unsigned long)((1000)*(16000000/4000.0)));
+            _delay((unsigned long)((500)*(16000000/4000.0)));
 
             pressBP1(0);
             pressBP2(0);
@@ -6458,7 +6458,7 @@ void main(void) {
                 testActif = 0;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                _delay((unsigned long)((2000)*(16000000/4000.0)));
+                _delay((unsigned long)((1000)*(16000000/4000.0)));
             } else {
 
                 printf("-> TEST:18:1");
@@ -6477,7 +6477,7 @@ void main(void) {
             attenteAquittement(&automatique, &testActif);
             initialConditions(&testActif, &testVoyants, &automatique, &programmation);
 
-            _delay((unsigned long)((2000)*(16000000/4000.0)));
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
 
         }
 

@@ -872,8 +872,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 184:         pressBP2(1);
 [e ( _pressBP2 (1 -> -> 1 `i `a ]
 "185
-[; ;main.c: 185:         _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 185:         _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "186
 [; ;main.c: 186:         alimenter(1);
 [e ( _alimenter (1 -> -> 1 `i `a ]
@@ -913,8 +913,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 402 ]
 "204
-[; ;main.c: 204:         _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 204:         _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "206
 [; ;main.c: 206:         pressBP1(0);
 [e ( _pressBP1 (1 -> -> 0 `i `a ]
@@ -1152,14 +1152,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 325:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
 "326
-[; ;main.c: 326:             _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 326:             _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "327
 [; ;main.c: 327:             pressBP1(0);
 [e ( _pressBP1 (1 -> -> 0 `i `a ]
 "329
-[; ;main.c: 329:             _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 329:             _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "331
 [; ;main.c: 331:             if (testR1(1)) {
 [e $ ! != -> ( _testR1 (1 -> -> 1 `i `a `i -> 0 `i 419  ]
@@ -1201,14 +1201,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 353:             pressBP1(1);
 [e ( _pressBP1 (1 -> -> 1 `i `a ]
 "354
-[; ;main.c: 354:             _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 354:             _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "355
 [; ;main.c: 355:             pressBP1(0);
 [e ( _pressBP1 (1 -> -> 0 `i `a ]
 "357
-[; ;main.c: 357:             _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 357:             _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "359
 [; ;main.c: 359:             if (testR1(0) && testR2(1)) {
 [e $ ! && != -> ( _testR1 (1 -> -> 0 `i `a `i -> 0 `i != -> ( _testR2 (1 -> -> 1 `i `a `i -> 0 `i 422  ]
@@ -1355,8 +1355,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 432 ]
 "430
-[; ;main.c: 430:             _delay((unsigned long)((2000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 430:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "432
 [; ;main.c: 432:         }
 }
@@ -1428,8 +1428,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 441 ]
 "467
-[; ;main.c: 467:             _delay((unsigned long)((2000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 467:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "469
 [; ;main.c: 469:         }
 }
@@ -1501,8 +1501,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 447 ]
 "506
-[; ;main.c: 506:             _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 506:             _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "508
 [; ;main.c: 508:             pressBP1(0);
 [e ( _pressBP1 (1 -> -> 0 `i `a ]
@@ -1806,8 +1806,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 674:                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 [e ( _sortieErreur (4 , , , &U _automatique &U _testActif &U _testVoyants &U _programmation ]
 "675
-[; ;main.c: 675:                 _delay((unsigned long)((2000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 675:                 _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "676
 [; ;main.c: 676:             } else {
 }
@@ -1848,8 +1848,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 692:             initialConditions(&testActif, &testVoyants, &automatique, &programmation);
 [e ( _initialConditions (4 , , , &U _testActif &U _testVoyants &U _automatique &U _programmation ]
 "694
-[; ;main.c: 694:             _delay((unsigned long)((2000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;main.c: 694:             _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "696
 [; ;main.c: 696:         }
 }
@@ -1864,8 +1864,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 702: }
 [e :UE 384 ]
 }
-[p f _sprintf 8388736 ]
 [p f _printf 8388608 ]
+[p f _sprintf 8388736 ]
 [a 58C 37 100 0 ]
 [a 68C 37 100 0 ]
 [a 122C 65 84 84 69 78 84 69 32 65 67 81 85 73 84 84 69 77 69 78 84 0 ]

@@ -182,7 +182,7 @@ void main(void) {
 
         pressBP1(true);
         pressBP2(true);
-        __delay_ms(1000);
+        __delay_ms(500);   // !!!modifié
         alimenter(true);
         __delay_ms(2000); // 2000 pour D925ED4; 10000 pour D850
 
@@ -201,7 +201,7 @@ void main(void) {
         }
 
 
-        __delay_ms(1000);
+        __delay_ms(500);  //!!! modififié
 
         pressBP1(false);
         pressBP2(false);
@@ -323,10 +323,10 @@ void main(void) {
 
             displayManagerMaster("ETAPE 6", "TEST R1 ON", LIGNE_VIDE, LIGNE_VIDE);
             pressBP1(true);
-            __delay_ms(1000);
+            __delay_ms(500);  // !!!modifié
             pressBP1(false);
 
-            __delay_ms(1000);
+            __delay_ms(500);  // !!! modifié
 
             if (testR1(true)) {
 
@@ -351,10 +351,10 @@ void main(void) {
 
             displayManagerMaster("ETAPE 7", "TEST R1 OFF - R2 ON", LIGNE_VIDE, LIGNE_VIDE);
             pressBP1(true);
-            __delay_ms(1000);
+            __delay_ms(500);  // !!! modifié
             pressBP1(false);
 
-            __delay_ms(1000);
+            __delay_ms(500);  // !!! modifié
 
             if (testR1(false) && testR2(true)) {
 
@@ -376,10 +376,10 @@ void main(void) {
 
             displayManagerMaster("ETAPE 8", "TEST R2 OFF - R3 ON", LIGNE_VIDE, LIGNE_VIDE);
             pressBP1(true);
-            __delay_ms(1000);
+            __delay_ms(1000);  // !!! NON MODIFIABLE: synchronisation arduino pour scan BLE
             pressBP1(false);
 
-            __delay_ms(1000);
+            __delay_ms(1000);  // !!! NON MODIFIABLE: synchronisation arduino pour scan BLE
 
             if (testR2(false) && testR3(true)) {
 
@@ -427,7 +427,7 @@ void main(void) {
 
             }
 
-            __delay_ms(2000);
+            __delay_ms(1000);  // !!! modifié
 
         }
 
@@ -464,7 +464,7 @@ void main(void) {
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
 
             }
-            __delay_ms(2000);
+            __delay_ms(1000);  // !!! modifié
 
         }
 
@@ -482,7 +482,7 @@ void main(void) {
             __delay_ms(250);
             pressBP1(false);
 
-            __delay_ms(3000);
+            __delay_ms(3000);  // !!! NON MODIFIABLE: synchronisation carte D925ED4
 
             pressBP1(true);
             __delay_ms(250);
@@ -503,7 +503,7 @@ void main(void) {
 
             }
 
-            __delay_ms(1000);
+            __delay_ms(500);  // !!! modifié
 
             pressBP1(false);
             pressBP2(false);
@@ -672,7 +672,7 @@ void main(void) {
                 testActif = false;
                 alerteDefaut("ETAPE 18", &testActif, &testVoyants);
                 sortieErreur(&automatique, &testActif, &testVoyants, &programmation);
-                __delay_ms(2000);
+                __delay_ms(1000);   // !!! modifié
             } else {
 
                 printf("-> TEST:18:1");
@@ -691,7 +691,7 @@ void main(void) {
             attenteAquittement(&automatique, &testActif);
             initialConditions(&testActif, &testVoyants, &automatique, &programmation);
 
-            __delay_ms(2000);
+            __delay_ms(1000);  //!!! modifié
 
         }
 
