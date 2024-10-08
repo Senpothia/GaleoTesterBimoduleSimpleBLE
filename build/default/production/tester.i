@@ -5838,7 +5838,10 @@ char getCharacterFormRx();
 void getBLEindentifier(char *);
 char setCharacterBit(char N, int reading, int K);
 void waitForBleAcq();
+_Bool waitForBleAcq2();
 _Bool analyseCodeBLE(char *);
+void resetModuleBle();
+void activerResetModuleBle();
 # 12 "tester.c" 2
 
 # 1 "./display.h" 1
@@ -7203,7 +7206,7 @@ char getCharacterFormRx() {
     for (int i = 7; i > -1; i--) {
 
         activeCLK();
-        _delay((unsigned long)((20/2)*(16000000/4000.0)));
+        _delay((unsigned long)((20 / 2)*(16000000/4000.0)));
         reading = PORTBbits.RB3;
         N = setCharacterBit(N, reading, i);
 
@@ -7219,7 +7222,7 @@ void getBLEindentifier(char * bleCode) {
 
         bleCode[i] = getCharacterFormRx();
     }
-    if(bleCode[0] == '#'){
+    if (bleCode[0] == '#') {
 
         bleCode[0] = 32;
     }
@@ -7257,14 +7260,39 @@ void waitForBleAcq() {
     _delay((unsigned long)((40)*(16000000/4000.0)));
 }
 
-_Bool analyseCodeBLE(char * bleCode){
+_Bool waitForBleAcq2() {
 
-    if(bleCode[1] == 'B' && bleCode[2] == 'X'){
+    long time = 0;
+    while (PORTBbits.RB3 == 1) {
+
+        time++;
+        if (time > 4000000) {
+
+            return 0;
+        }
+    }
+    time = 0;
+    while (PORTBbits.RB3 == 0) {
+
+        time++;
+        if (time > 4000000) {
+
+            return 0;
+        }
+    }
+
+    _delay((unsigned long)((40)*(16000000/4000.0)));
+    return 1;
+}
+
+_Bool analyseCodeBLE(char * bleCode) {
+
+    if (bleCode[1] == 'B' && bleCode[2] == 'X') {
 
         return 1;
     }
 
-    if(bleCode[1] == '0' && bleCode[2] == '0'){
+    if (bleCode[1] == '0' && bleCode[2] == '0') {
 
         return 0;
     }
@@ -7313,7 +7341,7 @@ void attenteDemarrage2(_Bool *autom, _Bool *testAct, _Bool *prog) {
                     break;
                 }
 
-                   case '6':
+                case '6':
                 {
                     printf("-> ERREUR PROGRAMMATION\r\n");
                     displayManager("TEST CARTE D925ED4", "", "ERREUR PROGRAMMATION", "");
@@ -7379,5 +7407,17 @@ void attenteDemarrage2(_Bool *autom, _Bool *testAct, _Bool *prog) {
             }
         }
     }
+
+}
+
+void resetModuleBle() {
+
+    activerResetModuleBle();
+    _delay((unsigned long)((3000)*(16000000/4000.0)));
+    startAlert();
+    __asm("reset");
+}
+
+void activerResetModuleBle() {
 
 }

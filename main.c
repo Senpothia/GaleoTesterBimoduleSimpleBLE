@@ -99,6 +99,7 @@ void main(void) {
     bool slaveWaiting = false;
     char orderFormWin;
     char bleCode[NBRE_DIGIT_ACQ + 1];
+    bool bleAcq = false;
 
     // Détermination mode de fonctionnement: master/slave
     // Affichage message d'accueil
@@ -124,8 +125,8 @@ void main(void) {
         pap = false;
     }
 
-    __delay_ms(3000);   // Attente demarrage module arduino BLE
-    
+    __delay_ms(3000); // Attente demarrage module arduino BLE
+
     while (1) {
 
         //LCD_Init(0x4E);
@@ -151,12 +152,21 @@ void main(void) {
             attenteDemarrage2(&automatique, &testActif, &programmation);
         }
 
-
+        startAlert();
         startPhaseBLE(1);
-        waitForBleAcq();
+        /*
+        bleAcq = waitForBleAcq2();
+
+        if (!bleAcq) {
+
+            startAlert();
+            resetModuleBle();
+        }
+         */
+
         __delay_ms(100);
         programmation = false;
-        startAlert();
+
         testActif = true;
         ledConforme(false);
         ledNonConforme(false);
@@ -645,11 +655,40 @@ void main(void) {
             //printf("ATTENTE VALIDATION BLUETOOTH\r\n");
             __delay_ms(100);
             startPhaseBLE(2);
-            waitForBleAcq();
+
+            // Vérification activité du module BLE - mode 1
+            //waitForBleAcq();
+
+            // Vérification activité du module BLE - mode 2
+            //------------------------------
+            bleAcq = waitForBleAcq2();
+
+            if (!bleAcq) {
+
+                displayManagerMaster("RESET MODULE BLE", "RESET SYSTEME", "REPRENDRE LE TEST", "RETOUR ETAPE 1");
+                resetModuleBle();
+            }
+
+
             startPhaseBLE(3);
             // Transmission code BLE
 
+            // Vérification activité du module BLE - mode 1
             waitForBleAcq();
+
+            /*
+            // Vérification activité du module BLE - mode 2
+            //------------------------------
+            bleAcq = waitForBleAcq2();
+
+            if (!bleAcq) {
+
+                startAlert();
+                resetModuleBle();
+            }
+            //---------------------------------
+             */
+
             getBLEindentifier(bleCode);
 
             __delay_ms(100);

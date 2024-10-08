@@ -5831,7 +5831,10 @@ char getCharacterFormRx();
 void getBLEindentifier(char *);
 char setCharacterBit(char N, int reading, int K);
 void waitForBleAcq();
+_Bool waitForBleAcq2();
 _Bool analyseCodeBLE(char *);
+void resetModuleBle();
+void activerResetModuleBle();
 # 58 "main.c" 2
 
 # 1 "./display.h" 1
@@ -5892,6 +5895,7 @@ void main(void) {
     _Bool slaveWaiting = 0;
     char orderFormWin;
     char bleCode[20 + 1];
+    _Bool bleAcq = 0;
 
 
 
@@ -5925,7 +5929,7 @@ void main(void) {
 
         displayManagerMaster("TEST CARTE D925ED4", "MODULE MAITRE", "POSITIONNER CARTE", "APPUYER SUR OK");
         _delay((unsigned long)((100)*(16000000/4000.0)));
-# 143 "main.c"
+# 144 "main.c"
         do { LATAbits.LATA7 = 0; } while(0);
         do { LATBbits.LATB5 = 0; } while(0);
 
@@ -5937,12 +5941,12 @@ void main(void) {
             attenteDemarrage2(&automatique, &testActif, &programmation);
         }
 
-
+        startAlert();
         startPhaseBLE(1);
-        waitForBleAcq();
+# 167 "main.c"
         _delay((unsigned long)((100)*(16000000/4000.0)));
         programmation = 0;
-        startAlert();
+
         testActif = 1;
         ledConforme(0);
         ledNonConforme(0);
@@ -6431,11 +6435,27 @@ void main(void) {
 
             _delay((unsigned long)((100)*(16000000/4000.0)));
             startPhaseBLE(2);
-            waitForBleAcq();
+
+
+
+
+
+
+            bleAcq = waitForBleAcq2();
+
+            if (!bleAcq) {
+
+                displayManagerMaster("RESET MODULE BLE", "RESET SYSTEME", "REPRENDRE LE TEST", "RETOUR ETAPE 1");
+                resetModuleBle();
+            }
+
+
             startPhaseBLE(3);
 
 
+
             waitForBleAcq();
+# 692 "main.c"
             getBLEindentifier(bleCode);
 
             _delay((unsigned long)((100)*(16000000/4000.0)));

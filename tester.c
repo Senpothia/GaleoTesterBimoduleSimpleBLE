@@ -1296,7 +1296,7 @@ char getCharacterFormRx() {
     for (int i = 7; i > -1; i--) {
 
         activeCLK();
-        __delay_ms(HALF_PERIOD_TRANSMISSION_MS/2);
+        __delay_ms(HALF_PERIOD_TRANSMISSION_MS / 2);
         reading = AN4_GetValue();
         N = setCharacterBit(N, reading, i);
         //__delay_ms(HALF_PERIOD_TRANSMISSION_MS);
@@ -1307,13 +1307,13 @@ char getCharacterFormRx() {
 }
 
 void getBLEindentifier(char * bleCode) {
-    
+
     for (int i = 0; i < NBRE_DIGIT_ACQ; i++) {
-        
+
         bleCode[i] = getCharacterFormRx();
     }
-    if(bleCode[0] == '#'){
-        
+    if (bleCode[0] == '#') {
+
         bleCode[0] = 32;
     }
     bleCode[NBRE_DIGIT_ACQ - 1] = '\0';
@@ -1350,18 +1350,43 @@ void waitForBleAcq() {
     __delay_ms(40);
 }
 
-bool analyseCodeBLE(char * bleCode){
-    
-    if(bleCode[1] == 'B' && bleCode[2] == 'X'){
-    
+bool waitForBleAcq2() {
+
+    long time = 0;
+    while (AN4_GetValue() == 1) {
+
+        time++;
+        if (time > 4000000) {
+
+            return false;
+        }
+    }
+    time = 0;
+    while (AN4_GetValue() == 0) {
+
+        time++;
+        if (time > 4000000) {
+
+            return false;
+        }
+    }
+
+    __delay_ms(40);
+    return true;
+}
+
+bool analyseCodeBLE(char * bleCode) {
+
+    if (bleCode[1] == 'B' && bleCode[2] == 'X') {
+
         return true;
     }
-    
-    if(bleCode[1] == '0' && bleCode[2] == '0'){
-    
+
+    if (bleCode[1] == '0' && bleCode[2] == '0') {
+
         return false;
     }
-    
+
     return false;
 }
 
@@ -1405,8 +1430,8 @@ void attenteDemarrage2(bool *autom, bool *testAct, bool *prog) {
                     repOperateur = true;
                     break;
                 }
-                
-                   case '6':
+
+                case '6':
                 {
                     printf("-> ERREUR PROGRAMMATION\r\n");
                     displayManager(TITRE, LIGNE_VIDE, ERREUR_PROGRAMMATION, LIGNE_VIDE);
@@ -1472,5 +1497,17 @@ void attenteDemarrage2(bool *autom, bool *testAct, bool *prog) {
             }
         }
     }
+
+}
+
+void resetModuleBle() {
+
+    activerResetModuleBle();
+    __delay_ms(3000);
+    startAlert();
+    RESET();
+}
+
+void activerResetModuleBle() {
 
 }

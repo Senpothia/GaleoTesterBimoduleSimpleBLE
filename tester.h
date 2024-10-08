@@ -43,7 +43,10 @@ char getCharacterFormRx();
 void getBLEindentifier(char *);
 char setCharacterBit(char N, int reading, int K);
 void waitForBleAcq();
+bool waitForBleAcq2();
 bool analyseCodeBLE(char *);
+void resetModuleBle();
+void  activerResetModuleBle();
 
 
 
