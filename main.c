@@ -100,6 +100,7 @@ void main(void) {
     char orderFormWin;
     char bleCode[NBRE_DIGIT_ACQ + 1];
     bool bleAcq = false;
+    bool moduleBleState = false;
 
     // Détermination mode de fonctionnement: master/slave
     // Affichage message d'accueil
@@ -125,6 +126,7 @@ void main(void) {
         pap = false;
     }
 
+    displayManagerMaster(TITRE, MODE_MASTER, "INITIALISATION...", LIGNE_VIDE);
     __delay_ms(3000); // Attente demarrage module arduino BLE
 
     while (1) {
@@ -146,6 +148,19 @@ void main(void) {
 
         // Attente de démarrage
 
+        moduleBleState = checkModuleBle();
+
+        if (!moduleBleState) {
+
+            displayManagerMaster(TITRE, MODE_MASTER, "DEFAUT MODULE BLE", "RESET EN COURS");
+            ledConforme(true);
+            ledNonConforme(true);
+            ledProgession(true);
+            activerResetModuleBle();
+            __delay_ms(2000);
+            RESET();
+
+        }
 
         while (!testActif) {
 

@@ -363,6 +363,7 @@ void initialConditions(bool *testAct, bool *testVoy, bool *autom, bool *prog) {
     setP2(false);
     REL8_SetLow();
     C1_SetLow();
+    AN3_SetLow();
 
 }
 
@@ -1509,5 +1510,28 @@ void resetModuleBle() {
 }
 
 void activerResetModuleBle() {
+
+    ledConforme(true);
+    ledNonConforme(true);
+    ledProgession(true);
+    AN3_SetHigh();
+    __delay_ms(5000);
+    AN3_SetLow();
+
+}
+
+bool checkModuleBle(){
+
+    long time = 0;
+    while (AN4_GetValue() == 0) {
+
+        time++;
+        if (time > 4000000) {
+
+            return false;
+        }
+    }
+
+    return true;
 
 }

@@ -5842,6 +5842,7 @@ _Bool waitForBleAcq2();
 _Bool analyseCodeBLE(char *);
 void resetModuleBle();
 void activerResetModuleBle();
+_Bool checkModuleBle();
 # 12 "tester.c" 2
 
 # 1 "./display.h" 1
@@ -6273,6 +6274,7 @@ void initialConditions(_Bool *testAct, _Bool *testVoy, _Bool *autom, _Bool *prog
     setP2(0);
     do { LATAbits.LATA7 = 0; } while(0);
     do { LATBbits.LATB5 = 0; } while(0);
+    do { LATBbits.LATB2 = 0; } while(0);
 
 }
 
@@ -7419,5 +7421,28 @@ void resetModuleBle() {
 }
 
 void activerResetModuleBle() {
+
+    ledConforme(1);
+    ledNonConforme(1);
+    ledProgession(1);
+    do { LATBbits.LATB2 = 1; } while(0);
+    _delay((unsigned long)((5000)*(16000000/4000.0)));
+    do { LATBbits.LATB2 = 0; } while(0);
+
+}
+
+_Bool checkModuleBle(){
+
+    long time = 0;
+    while (PORTBbits.RB3 == 0) {
+
+        time++;
+        if (time > 4000000) {
+
+            return 0;
+        }
+    }
+
+    return 1;
 
 }

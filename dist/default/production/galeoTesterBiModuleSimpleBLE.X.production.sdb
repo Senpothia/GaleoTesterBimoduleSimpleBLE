@@ -67,7 +67,7 @@ I2C_DATA_NACK 3
 I2C_TIMEOUT 4
 I2C_NULL 5
 ]
-"417 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\main.c
+"432 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\main.c
 [e E3374 . `uc
 AN3 8
 AN2 10
@@ -348,48 +348,50 @@ channel_FVR 31
 [v _setP2 setP2 `(v  1 e 1 0 ]
 "346
 [v _initialConditions initialConditions `(v  1 e 1 0 ]
-"369
+"370
 [v _activerBuzzer activerBuzzer `(v  1 e 1 0 ]
-"386
+"387
 [v _activerTouche activerTouche `(v  1 e 1 0 ]
-"395
+"396
 [v _startAlert startAlert `(v  1 e 1 0 ]
-"406
+"407
 [v _errorAlert errorAlert `(v  1 e 1 0 ]
-"422
+"423
 [v _okAlert okAlert `(v  1 e 1 0 ]
-"706
+"707
 [v _attenteAquittement attenteAquittement `(v  1 e 1 0 ]
-"751
+"752
 [v _sortieErreur sortieErreur `(v  1 e 1 0 ]
-"759
+"760
 [v _alerteDefautEtape16 alerteDefautEtape16 `(v  1 e 1 0 ]
-"822
+"823
 [v _processSlaveResponse processSlaveResponse `(v  1 e 1 0 ]
-"1263
+"1264
 [v _startPhaseBLE startPhaseBLE `(v  1 e 1 0 ]
-"1276
+"1277
 [v _activeCLK activeCLK `(v  1 e 1 0 ]
-"1284
+"1285
 [v _releaseCLK releaseCLK `(v  1 e 1 0 ]
-"1291
+"1292
 [v _getCharacterFormRx getCharacterFormRx `(uc  1 e 1 0 ]
-"1309
+"1310
 [v _getBLEindentifier getBLEindentifier `(v  1 e 1 0 ]
-"1324
+"1325
 [v _setCharacterBit setCharacterBit `(uc  1 e 1 0 ]
-"1342
+"1343
 [v _waitForBleAcq waitForBleAcq `(v  1 e 1 0 ]
-"1353
+"1354
 [v _waitForBleAcq2 waitForBleAcq2 `(a  1 e 1 0 ]
-"1378
+"1379
 [v _analyseCodeBLE analyseCodeBLE `(a  1 e 1 0 ]
-"1393
+"1394
 [v _attenteDemarrage2 attenteDemarrage2 `(v  1 e 1 0 ]
-"1503
+"1504
 [v _resetModuleBle resetModuleBle `(v  1 e 1 0 ]
-"1511
+"1512
 [v _activerResetModuleBle activerResetModuleBle `(v  1 e 1 0 ]
+"1523
+[v _checkModuleBle checkModuleBle `(a  1 e 1 0 ]
 "213 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X/mcc_generated_files/i2c_master.h
 [v _MSSP_InterruptHandler MSSP_InterruptHandler `*.37(v  1 e 2 0 ]
 [s S552 . 1 `uc 1 IOCIF 1 0 :1:0 
@@ -409,7 +411,7 @@ channel_FVR 31
 ]
 [u S566 . 1 `S552 1 . 1 0 `S561 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES566  1 e 1 @11 ]
-[s S1982 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1999 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -419,8 +421,8 @@ channel_FVR 31
 `uc 1 RB7 1 0 :1:7 
 ]
 "509
-[u S1991 . 1 `S1982 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1991  1 e 1 @13 ]
+[u S2008 . 1 `S1999 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES2008  1 e 1 @13 ]
 [s S1369 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
@@ -433,7 +435,7 @@ channel_FVR 31
 "571
 [u S1378 . 1 `S1369 1 . 1 0 ]
 [v _PORTCbits PORTCbits `VES1378  1 e 1 @14 ]
-[s S1877 . 1 `uc 1 RD0 1 0 :1:0 
+[s S1894 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -443,8 +445,8 @@ channel_FVR 31
 `uc 1 RD7 1 0 :1:7 
 ]
 "633
-[u S1886 . 1 `S1877 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES1886  1 e 1 @15 ]
+[u S1903 . 1 `S1894 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES1903  1 e 1 @15 ]
 [s S596 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -589,14 +591,14 @@ channel_FVR 31
 [v _LATD LATD `VEuc  1 e 1 @271 ]
 "2614
 [v _LATE LATE `VEuc  1 e 1 @272 ]
-[s S1898 . 1 `uc 1 LATE0 1 0 :1:0 
+[s S1915 . 1 `uc 1 LATE0 1 0 :1:0 
 `uc 1 LATE1 1 0 :1:1 
 `uc 1 LATE2 1 0 :1:2 
 `uc 1 LATE3 1 0 :1:3 
 ]
 "2627
-[u S1903 . 1 `S1898 1 . 1 0 ]
-[v _LATEbits LATEbits `VES1903  1 e 1 @272 ]
+[u S1920 . 1 `S1915 1 . 1 0 ]
+[v _LATEbits LATEbits `VES1920  1 e 1 @272 ]
 "2924
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "3273
@@ -811,26 +813,28 @@ channel_FVR 31
 "68 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"455
-[v main@buffer_1733 buffer `i  1 a 2 23 ]
-"418
+"470
+[v main@buffer_1750 buffer `i  1 a 2 23 ]
+"433
 [v main@buffer buffer `i  1 a 2 21 ]
 "101
 [v main@bleCode bleCode `[21]uc  1 a 21 0 ]
 "91
 [v main@slectureAN1 slectureAN1 `[5]uc  1 a 5 28 ]
 "90
-[v main@lectureAN1 lectureAN1 `i  1 a 2 35 ]
+[v main@lectureAN1 lectureAN1 `i  1 a 2 36 ]
 "88
-[v main@testActif testActif `a  1 a 1 40 ]
+[v main@testActif testActif `a  1 a 1 41 ]
 "89
-[v main@testVoyants testVoyants `a  1 a 1 39 ]
+[v main@testVoyants testVoyants `a  1 a 1 40 ]
 "93
-[v main@automatique automatique `a  1 a 1 38 ]
+[v main@automatique automatique `a  1 a 1 39 ]
 "95
-[v main@programmation programmation `a  1 a 1 37 ]
+[v main@programmation programmation `a  1 a 1 38 ]
 "92
-[v main@testLeds testLeds `a  1 a 1 34 ]
+[v main@testLeds testLeds `a  1 a 1 35 ]
+"103
+[v main@moduleBleState moduleBleState `a  1 a 1 34 ]
 "102
 [v main@bleAcq bleAcq `a  1 a 1 33 ]
 "99
@@ -839,36 +843,36 @@ channel_FVR 31
 [v main@slaveInTest slaveInTest `a  1 a 1 26 ]
 "96
 [v main@master master `a  1 a 1 25 ]
-"735
+"750
 } 0
-"1353 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\tester.c
+"1354 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\tester.c
 [v _waitForBleAcq2 waitForBleAcq2 `(a  1 e 1 0 ]
 {
-"1355
+"1356
 [v waitForBleAcq2@time time `l  1 a 4 4 ]
-"1376
+"1377
 } 0
-"1342
+"1343
 [v _waitForBleAcq waitForBleAcq `(v  1 e 1 0 ]
 {
-"1351
+"1352
 } 0
-"1263
+"1264
 [v _startPhaseBLE startPhaseBLE `(v  1 e 1 0 ]
 {
-"1265
+"1266
 [v startPhaseBLE@i i `i  1 a 2 6 ]
-"1263
+"1264
 [v startPhaseBLE@phase phase `i  1 p 2 3 ]
-"1274
+"1275
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@s s `*.6uc  1 a 1 wreg ]
-[s S2930 _IO_FILE 5 `*.6uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[s S2946 _IO_FILE 5 `*.6uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
 "13
-[v sprintf@f f `S2930  1 a 5 21 ]
+[v sprintf@f f `S2946  1 a 5 21 ]
 "11
 [v sprintf@ret ret `i  1 a 2 17 ]
 "12
@@ -889,73 +893,73 @@ channel_FVR 31
 [v setHorloge@active active `a  1 a 1 3 ]
 "57
 } 0
-"1503
+"1504
 [v _resetModuleBle resetModuleBle `(v  1 e 1 0 ]
 {
-"1509
+"1510
 } 0
-"1511
+"1512
 [v _activerResetModuleBle activerResetModuleBle `(v  1 e 1 0 ]
 {
-"1513
+"1521
 } 0
-"422
+"423
 [v _okAlert okAlert `(v  1 e 1 0 ]
 {
-"426
+"427
 [v okAlert@i i `i  1 a 2 17 ]
-"433
+"434
 } 0
-"395
+"396
 [v _startAlert startAlert `(v  1 e 1 0 ]
 {
-"397
+"398
 [v startAlert@i i `i  1 a 2 8 ]
-"404
+"405
 } 0
-"1309
+"1310
 [v _getBLEindentifier getBLEindentifier `(v  1 e 1 0 ]
 {
 [v getBLEindentifier@bleCode bleCode `*.6uc  1 a 1 wreg ]
-"1311
+"1312
 [v getBLEindentifier@i i `i  1 a 2 19 ]
-"1309
+"1310
 [v getBLEindentifier@bleCode bleCode `*.6uc  1 a 1 wreg ]
-"1311
+"1312
 [v getBLEindentifier@bleCode bleCode `*.6uc  1 a 1 21 ]
-"1322
+"1323
 } 0
-"1284
+"1285
 [v _releaseCLK releaseCLK `(v  1 e 1 0 ]
 {
-"1289
+"1290
 } 0
-"1291
+"1292
 [v _getCharacterFormRx getCharacterFormRx `(uc  1 e 1 0 ]
 {
-"1296
+"1297
 [v getCharacterFormRx@i i `i  1 a 2 15 ]
-"1294
+"1295
 [v getCharacterFormRx@reading reading `i  1 a 2 12 ]
-"1293
+"1294
 [v getCharacterFormRx@N N `uc  1 a 1 14 ]
-"1307
+"1308
 } 0
-"1324
+"1325
 [v _setCharacterBit setCharacterBit `(uc  1 e 1 0 ]
 {
 [v setCharacterBit@N N `uc  1 a 1 wreg ]
 [v setCharacterBit@N N `uc  1 a 1 wreg ]
 [v setCharacterBit@reading reading `i  1 p 2 3 ]
 [v setCharacterBit@K K `i  1 p 2 5 ]
-"1327
+"1328
 [v setCharacterBit@N N `uc  1 a 1 8 ]
-"1340
+"1341
 } 0
-"1276
+"1277
 [v _activeCLK activeCLK `(v  1 e 1 0 ]
 {
-"1282
+"1283
 } 0
 "23 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\display.c
 [v _displayManagerMaster displayManagerMaster `(v  1 e 1 0 ]
@@ -975,50 +979,57 @@ channel_FVR 31
 [v LCD_Init@I2C_Add I2C_Add `uc  1 a 1 11 ]
 "101
 } 0
-"1393 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\tester.c
+"1523 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\tester.c
+[v _checkModuleBle checkModuleBle `(a  1 e 1 0 ]
+{
+"1525
+[v checkModuleBle@time time `l  1 a 4 3 ]
+"1537
+} 0
+"1394
 [v _attenteDemarrage2 attenteDemarrage2 `(v  1 e 1 0 ]
 {
 [v attenteDemarrage2@autom autom `*.6a  1 a 1 wreg ]
-"1396
+"1397
 [v attenteDemarrage2@repOperateur repOperateur `a  1 a 1 21 ]
-"1395
+"1396
 [v attenteDemarrage2@reception reception `uc  1 a 1 20 ]
-"1393
+"1394
 [v attenteDemarrage2@autom autom `*.6a  1 a 1 wreg ]
 [v attenteDemarrage2@testAct testAct `*.6a  1 p 1 16 ]
 [v attenteDemarrage2@prog prog `*.6a  1 p 1 17 ]
-"1396
+"1397
 [v attenteDemarrage2@autom autom `*.6a  1 a 1 22 ]
-"1501
+"1502
 } 0
-"1378
+"1379
 [v _analyseCodeBLE analyseCodeBLE `(a  1 e 1 0 ]
 {
 [v analyseCodeBLE@bleCode bleCode `*.6uc  1 a 1 wreg ]
 [v analyseCodeBLE@bleCode bleCode `*.6uc  1 a 1 wreg ]
-"1380
+"1381
 [v analyseCodeBLE@bleCode bleCode `*.6uc  1 a 1 3 ]
-"1391
+"1392
 } 0
-"759
+"760
 [v _alerteDefautEtape16 alerteDefautEtape16 `(v  1 e 1 0 ]
 {
-"761
-[v alerteDefautEtape16@error error `[20]uc  1 a 20 10 ]
 "762
+[v alerteDefautEtape16@error error `[20]uc  1 a 20 10 ]
+"763
 [v alerteDefautEtape16@eol eol `[10]uc  1 a 10 0 ]
-"771
+"772
 [v alerteDefautEtape16@reponse reponse `a  1 a 1 32 ]
-"759
+"760
 [v alerteDefautEtape16@etape etape `*.25uc  1 p 2 55 ]
 [v alerteDefautEtape16@testAct testAct `*.6a  1 p 1 57 ]
 [v alerteDefautEtape16@testVoy testVoy `*.6a  1 p 1 58 ]
 [v alerteDefautEtape16@autom autom `*.6a  1 p 1 59 ]
 [v alerteDefautEtape16@prog prog `*.6a  1 p 1 60 ]
-[v alerteDefautEtape16@F3858 F3858 `[20]uc  1 s 20 F3858 ]
-"761
-[v alerteDefautEtape16@F3860 F3860 `[10]uc  1 s 10 F3860 ]
-"806
+[v alerteDefautEtape16@F3859 F3859 `[20]uc  1 s 20 F3859 ]
+"762
+[v alerteDefautEtape16@F3861 F3861 `[10]uc  1 s 10 F3861 ]
+"807
 } 0
 "104
 [v _testR3 testR3 `(a  1 e 1 0 ]
@@ -1056,14 +1067,14 @@ channel_FVR 31
 [v testR1@active active `a  1 a 1 4 ]
 "80
 } 0
-"751
+"752
 [v _sortieErreur sortieErreur `(v  1 e 1 0 ]
 {
 [v sortieErreur@autom autom `*.39a  1 p 2 24 ]
 [v sortieErreur@testAct testAct `*.39a  1 p 2 26 ]
 [v sortieErreur@testVoy testVoy `*.39a  1 p 2 28 ]
 [v sortieErreur@prog prog `*.39a  1 p 2 30 ]
-"757
+"758
 } 0
 "346
 [v _initialConditions initialConditions `(v  1 e 1 0 ]
@@ -1072,7 +1083,7 @@ channel_FVR 31
 [v initialConditions@testVoy testVoy `*.39a  1 p 2 18 ]
 [v initialConditions@autom autom `*.39a  1 p 2 20 ]
 [v initialConditions@prog prog `*.39a  1 p 2 22 ]
-"367
+"368
 } 0
 "335
 [v _setP2 setP2 `(v  1 e 1 0 ]
@@ -1110,17 +1121,17 @@ channel_FVR 31
 [v pressBP1@active active `a  1 a 1 3 ]
 "36
 } 0
-"706
+"707
 [v _attenteAquittement attenteAquittement `(v  1 e 1 0 ]
 {
-"709
+"710
 [v attenteAquittement@repOperateur repOperateur `a  1 a 1 23 ]
-"708
+"709
 [v attenteAquittement@reception reception `uc  1 a 1 22 ]
-"706
+"707
 [v attenteAquittement@autom autom `*.39a  1 p 2 16 ]
 [v attenteAquittement@testAct testAct `*.39a  1 p 2 18 ]
-"749
+"750
 } 0
 "244
 [v _reponseOperateur reponseOperateur `(a  1 e 1 0 ]
@@ -1180,9 +1191,9 @@ channel_FVR 31
 [v alerteDefaut@etape etape `*.25uc  1 p 2 16 ]
 [v alerteDefaut@testAct testAct `*.39a  1 p 2 18 ]
 [v alerteDefaut@testVoy testVoy `*.39a  1 p 2 20 ]
-[v alerteDefaut@F3799 F3799 `[20]uc  1 s 20 F3799 ]
+[v alerteDefaut@F3800 F3800 `[20]uc  1 s 20 F3800 ]
 "224
-[v alerteDefaut@F3801 F3801 `[10]uc  1 s 10 F3801 ]
+[v alerteDefaut@F3802 F3802 `[10]uc  1 s 10 F3802 ]
 "242
 } 0
 "3 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strcat.c
@@ -1216,42 +1227,42 @@ channel_FVR 31
 "1390 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S2956 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S2956  1 a 1 wreg ]
+[s S2972 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S2972  1 a 1 wreg ]
 "1393
 [v vfprintf@cfmt cfmt `*.26uc  1 a 2 11 ]
 "1390
-[v vfprintf@fp fp `*.4S2956  1 a 1 wreg ]
+[v vfprintf@fp fp `*.4S2972  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.26DCuc  1 p 2 68 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 70 ]
 "1395
 "1390
-[v vfprintf@fp fp `*.4S2956  1 a 1 10 ]
+[v vfprintf@fp fp `*.4S2972  1 a 1 10 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S2956 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S2956  1 a 1 wreg ]
+[s S2972 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S2972  1 a 1 wreg ]
 "696
 [v vfpfcnvrt@ll ll `o  1 a 8 0 ]
 "699
 [v vfpfcnvrt@vp vp `*.4v  1 a 1 8 ]
 "692
-[v vfpfcnvrt@fp fp `*.4S2956  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.4S2972  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.26uc  1 p 1 61 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 62 ]
 "702
 "692
-[v vfpfcnvrt@fp fp `*.4S2956  1 a 1 9 ]
+[v vfpfcnvrt@fp fp `*.4S2972  1 a 1 9 ]
 "1387
 } 0
 "287
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S2956 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S2956  1 a 1 wreg ]
+[s S2972 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S2972  1 a 1 wreg ]
 "290
 [v dtoa@n n `o  1 a 8 51 ]
 "289
@@ -1260,28 +1271,28 @@ channel_FVR 31
 [v dtoa@w w `i  1 a 2 47 ]
 [v dtoa@p p `i  1 a 2 45 ]
 "287
-[v dtoa@fp fp `*.4S2956  1 a 1 wreg ]
+[v dtoa@fp fp `*.4S2972  1 a 1 wreg ]
 [v dtoa@d d `o  1 p 8 31 ]
 "293
 "287
-[v dtoa@fp fp `*.4S2956  1 a 1 42 ]
+[v dtoa@fp fp `*.4S2972  1 a 1 42 ]
 "328
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S2956 _IO_FILE 0 ]
-[v pad@fp fp `*.4S2956  1 a 1 wreg ]
+[s S2972 _IO_FILE 0 ]
+[v pad@fp fp `*.4S2972  1 a 1 wreg ]
 "74
 [v pad@w w `i  1 a 2 28 ]
 [v pad@i i `i  1 a 2 26 ]
 "72
-[v pad@fp fp `*.4S2956  1 a 1 wreg ]
+[v pad@fp fp `*.4S2972  1 a 1 wreg ]
 [v pad@buf buf `*.6uc  1 p 1 22 ]
 [v pad@p p `i  1 p 2 23 ]
 "77
 "72
-[v pad@fp fp `*.4S2956  1 a 1 30 ]
+[v pad@fp fp `*.4S2972  1 a 1 30 ]
 "95
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
@@ -1303,8 +1314,8 @@ channel_FVR 31
 [v fputs@c c `uc  1 a 1 18 ]
 "8
 [v fputs@s s `*.6DCuc  1 a 1 wreg ]
-[s S2930 _IO_FILE 5 `*.6uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.4S2930  1 p 1 14 ]
+[s S2946 _IO_FILE 5 `*.6uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.4S2946  1 p 1 14 ]
 "13
 [v fputs@s s `*.6DCuc  1 a 1 21 ]
 "19
@@ -1313,8 +1324,8 @@ channel_FVR 31
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 6 ]
-[s S2930 _IO_FILE 5 `*.6uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.4S2930  1 p 1 8 ]
+[s S2946 _IO_FILE 5 `*.6uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.4S2946  1 p 1 8 ]
 "24
 } 0
 "201 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\mcc_generated_files/eusart.c
@@ -1391,21 +1402,21 @@ channel_FVR 31
 [v ledConforme@active active `a  1 a 1 3 ]
 "208
 } 0
-"406
+"407
 [v _errorAlert errorAlert `(v  1 e 1 0 ]
 {
-"410
+"411
 [v errorAlert@i i `i  1 a 2 10 ]
-"408
+"409
 [v errorAlert@j j `i  1 a 2 8 ]
-"420
+"421
 } 0
-"369
+"370
 [v _activerBuzzer activerBuzzer `(v  1 e 1 0 ]
 {
-"372
+"373
 [v activerBuzzer@i i `i  1 a 2 4 ]
-"384
+"385
 } 0
 "7 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\display.c
 [v _displayManager displayManager `(v  1 e 1 0 ]
@@ -1508,10 +1519,10 @@ channel_FVR 31
 [v alimenter@active active `a  1 a 1 3 ]
 "26
 } 0
-"386
+"387
 [v _activerTouche activerTouche `(v  1 e 1 0 ]
 {
-"393
+"394
 } 0
 "50 C:\Users\Michel\MPLABXProjects\galeoTesterBiModuleSimpleBLE.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]

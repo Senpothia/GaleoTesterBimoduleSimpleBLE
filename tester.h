@@ -47,6 +47,7 @@ bool waitForBleAcq2();
 bool analyseCodeBLE(char *);
 void resetModuleBle();
 void  activerResetModuleBle();
+bool checkModuleBle();
 
 
 

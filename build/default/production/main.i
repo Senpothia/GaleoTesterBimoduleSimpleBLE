@@ -5835,6 +5835,7 @@ _Bool waitForBleAcq2();
 _Bool analyseCodeBLE(char *);
 void resetModuleBle();
 void activerResetModuleBle();
+_Bool checkModuleBle();
 # 58 "main.c" 2
 
 # 1 "./display.h" 1
@@ -5896,6 +5897,7 @@ void main(void) {
     char orderFormWin;
     char bleCode[20 + 1];
     _Bool bleAcq = 0;
+    _Bool moduleBleState = 0;
 
 
 
@@ -5921,6 +5923,7 @@ void main(void) {
         pap = 0;
     }
 
+    displayManagerMaster("TEST CARTE D925ED4", "MODULE MAITRE", "INITIALISATION...", "");
     _delay((unsigned long)((3000)*(16000000/4000.0)));
 
     while (1) {
@@ -5929,12 +5932,25 @@ void main(void) {
 
         displayManagerMaster("TEST CARTE D925ED4", "MODULE MAITRE", "POSITIONNER CARTE", "APPUYER SUR OK");
         _delay((unsigned long)((100)*(16000000/4000.0)));
-# 144 "main.c"
+# 146 "main.c"
         do { LATAbits.LATA7 = 0; } while(0);
         do { LATBbits.LATB5 = 0; } while(0);
 
 
 
+        moduleBleState = checkModuleBle();
+
+        if (!moduleBleState) {
+
+            displayManagerMaster("TEST CARTE D925ED4", "MODULE MAITRE", "DEFAUT MODULE BLE", "RESET EN COURS");
+            ledConforme(1);
+            ledNonConforme(1);
+            ledProgession(1);
+            activerResetModuleBle();
+            _delay((unsigned long)((2000)*(16000000/4000.0)));
+            __asm("reset");
+
+        }
 
         while (!testActif) {
 
@@ -5943,7 +5959,7 @@ void main(void) {
 
         startAlert();
         startPhaseBLE(1);
-# 167 "main.c"
+# 182 "main.c"
         _delay((unsigned long)((100)*(16000000/4000.0)));
         programmation = 0;
 
@@ -6455,7 +6471,7 @@ void main(void) {
 
 
             waitForBleAcq();
-# 692 "main.c"
+# 707 "main.c"
             getBLEindentifier(bleCode);
 
             _delay((unsigned long)((100)*(16000000/4000.0)));
